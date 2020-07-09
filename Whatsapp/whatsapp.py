@@ -1,6 +1,9 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from time import sleep
-driver=webdriver.Chrome()
+chrome_options = Options()
+chrome_options.add_argument("--user-data-dir=chrome-data")
+driver = webdriver.Chrome('chromedriver.exe',options=chrome_options)
 #Here I have specified the location of my chromedriver
 
 driver.get("https://web.whatsapp.com")
